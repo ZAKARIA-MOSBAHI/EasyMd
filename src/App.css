@@ -1,0 +1,14 @@
+#root {
+  max-width: 1300px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
+.app {
+  height: calc(100% - 70px);
+}
+.app_container {
+  display: grid;
+  grid-template-columns: 1fr 5px 1fr;
+  height: 100%;
+}

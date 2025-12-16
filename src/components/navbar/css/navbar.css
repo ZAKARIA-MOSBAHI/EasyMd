@@ -1,0 +1,25 @@
+.navbar {
+  height: 70px;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.save_changes_btn {
+  padding: 12px 20px;
+  background-color: #e56643;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}

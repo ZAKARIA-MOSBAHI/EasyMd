@@ -1,0 +1,5 @@
+.ql-container,
+.ql-toolbar {
+  border: none !important;
+  color: white !important;
+}
