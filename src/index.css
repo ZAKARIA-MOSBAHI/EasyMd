@@ -24,8 +24,7 @@ body {
   border-radius: 4px;
 }
 .divider {
-  /* background-color: #6c6d72; */
-
+  user-select: none;
   cursor: e-resize;
 }
 p {

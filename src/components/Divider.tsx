@@ -1,5 +1,19 @@
-import React from "react";
+import type { RefObject } from "react";
 
-export default function Divider() {
-  return <div className="divider"></div>;
+// { ref }: DividerProps
+export default function Divider({
+  ref,
+  onResize,
+}: {
+  ref: RefObject<HTMLDivElement | null>;
+  onResize: () => void;
+}) {
+  return (
+    <div
+      draggable={false}
+      ref={ref}
+      className="divider"
+      onMouseDown={onResize}
+    ></div>
+  );
 }
