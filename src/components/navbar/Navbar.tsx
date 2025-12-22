@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import  { type JSX } from "react";
 import Row from "./components/Row";
 import Logo from "../ui/Logo";
 import "./css/navbar.css";
