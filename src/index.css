@@ -18,11 +18,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.editor,
-.markdown_preview {
-  background-color: #15161a;
-  border-radius: 4px;
-}
+
 .divider {
   user-select: none;
   cursor: e-resize;

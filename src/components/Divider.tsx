@@ -13,6 +13,7 @@ export default function Divider({
       draggable={false}
       ref={ref}
       className="divider"
+      style={{background : "#333"}}
       onMouseDown={onResize}
     ></div>
   );
