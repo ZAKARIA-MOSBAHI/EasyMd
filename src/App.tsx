@@ -7,6 +7,8 @@ import Preview from "./components/Preview";
 import { useResize } from "./hooks/useResize";
 import ToolBar from "./components/Toolbar/ToolBar";
 import { TextFormattingToolbar } from "./components/Toolbar/components/TextFormattingToolbar";
+import HeadingToolbar from "./components/Toolbar/components/HeadingToolbar";
+import BlockActionsToolbar from "./components/Toolbar/components/BlockActionsToolbar";
  
 function App() {
   const dividerRef = useRef<HTMLDivElement | null>(null);
@@ -22,6 +24,11 @@ function App() {
       <Navbar />
       <ToolBar>
         <TextFormattingToolbar />
+        <div style={{width: "2px" , height : "25px" , background : 'red' , borderRadius : 99}}></div>
+        <HeadingToolbar/>
+        <div style={{width: "2px" , height : "25px" , background : 'red' , borderRadius : 99}}></div>
+
+        <BlockActionsToolbar/>
       </ToolBar>
       <div
         ref={containerRef}

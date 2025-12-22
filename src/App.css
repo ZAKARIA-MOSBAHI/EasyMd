@@ -14,3 +14,7 @@
 #toolbar button.ql-active  > svg{
   color: #e56643;
  }
+ #toolbar {
+  display: flex;
+  gap : 16px;
+ }

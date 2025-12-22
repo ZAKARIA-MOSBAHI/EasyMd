@@ -1,6 +1,6 @@
-import React, { type JSX } from "react";
+import React from "react";
 
-export default function ToolBar({children}: {children : JSX.Element}) {
+export default function ToolBar({children}: {children : React.ReactNode}) {
   return  <div id="toolbar">
    {children}
   </div>;
