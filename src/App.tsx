@@ -5,7 +5,9 @@ import Editor from "./components/Editor/Editor";
 import Navbar from "./components/navbar/Navbar";
 import Preview from "./components/Preview";
 import { useResize } from "./hooks/useResize";
-
+import ToolBar from "./components/Toolbar/ToolBar";
+import { TextFormattingToolbar } from "./components/Toolbar/components/TextFormattingToolbar";
+ 
 function App() {
   const dividerRef = useRef<HTMLDivElement | null>(null);
   const { containerRef, leftWidth, startDragging } = useResize();
@@ -18,6 +20,9 @@ function App() {
   return (
     <div className="app">
       <Navbar />
+      <ToolBar>
+        <TextFormattingToolbar />
+      </ToolBar>
       <div
         ref={containerRef}
         className="app_container"

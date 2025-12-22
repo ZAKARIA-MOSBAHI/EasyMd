@@ -1,6 +1,5 @@
 #root {
-  max-width: 1300px;
-  height: 100vh;
+   height: 100vh;
   margin: 0 auto;
   text-align: center;
 }
@@ -12,3 +11,6 @@
   /* grid-template-columns: 1fr 5px 1fr; */
   height: 100%;
 }
+#toolbar button.ql-active  > svg{
+  color: #e56643;
+ }
