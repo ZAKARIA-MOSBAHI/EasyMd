@@ -11,10 +11,9 @@
   /* grid-template-columns: 1fr 5px 1fr; */
   height: 100%;
 }
-#toolbar button.ql-active  > svg{
-  color: #e56643;
- }
- #toolbar {
-  display: flex;
-  gap : 16px;
- }
+ 
+ 
+
+
+
+ 
