@@ -32,8 +32,18 @@ const quillToolbarButtons : quillToolbarBtn[] = [
     type: "button",
     name: "code",
     label: "Inline code",
+   },{
+    type: "button",
+    name: "blockquote",
+    label: "Blockquote",
    },
- /*  {
+   {
+    type: "button",
+    name: "code-block",
+    label: "Code block",
+   },
+   { type: "divider" },
+  {
     type: "button",
     name: "header",
     value: "1",
@@ -68,36 +78,43 @@ const quillToolbarButtons : quillToolbarBtn[] = [
     name: "header",
     value: "6",
     label: "Heading 6",
+   },{
+    type: "button",
+    name: "header",
+    value: "",
+    label: "Paragraph",
    },{ type: "divider" },
 
-  // block actions
-  {
-    type: "button",
-    name: "list",
-    value: "ordered",
-    label: "Ordered list",
-   },
-  {
-    type: "button",
-    name: "list",
-    value: "bullet",
-    label: "Unordered list",
-   },
-  {
-    type: "button",
-    name: "blockquote",
-    label: "Blockquote",
-   },
-  {
-    type: "button",
-    name: "code-block",
-    label: "Code block",
-   },
-  {
-    type: "button",
-    name: "image",
-    label: "Image",
-   },
+   {
+     type: "button",
+     name: "list",
+     value: "ordered",
+     label: "Ordered list",
+    },
+    {
+      type: "button",
+      name: "list",
+      value: "bullet",
+      label: "Unordered list",
+     },
+     {
+      type: "button",
+      name: "list",
+      value: "check",
+      label: "Check list",
+     },
+     {
+      type: "button",
+      name : "link",
+      label: "Link",
+     },
+     {
+       type: "button",
+       name: "image",
+       label: "Image",
+      },
+  /*
+   
   {
     type: "button",
     name: "hr",
@@ -124,6 +141,7 @@ export default function QuillToolbar() {
                    
                 type="button"
               >
+                {item.label === "Paragraph" ? "P" : ""}
                </button>
             );
           })}
