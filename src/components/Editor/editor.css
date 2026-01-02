@@ -7,9 +7,16 @@
   width : 95%;
   margin: 0 auto;
 }
- .quill {
+.editor {
+  overflow: hidden;
+}
+.quill {
   height: 100%;
- }
+}
+.ql-editor {
+  overflow-y: scroll;
+  font-size: 14px !important;
+}
 .ql-editor.ql-blank::before {
   color: white !important; 
 }

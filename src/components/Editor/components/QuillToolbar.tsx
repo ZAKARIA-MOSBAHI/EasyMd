@@ -1,5 +1,7 @@
- 
-type quillToolbarBtn = {
+import ExportActions from "./ExportActions";
+import HistoryActions from "./HistoryActions";
+
+ type quillToolbarBtn = {
       type: "button";
   name: string;
   value?: string;
@@ -8,6 +10,7 @@ type quillToolbarBtn = {
     }
   | { type: "divider" };
 const quillToolbarButtons : quillToolbarBtn[] = [
+  { type: "divider" },
      {
     type: "button",
     name: "bold",
@@ -113,6 +116,7 @@ const quillToolbarButtons : quillToolbarBtn[] = [
        name: "image",
        label: "Image",
       },
+      { type: "divider" }
   /*
    
   {
@@ -123,9 +127,10 @@ const quillToolbarButtons : quillToolbarBtn[] = [
 
 
 ]
-export default function QuillToolbar() {
+export default function QuillToolbar( ) {
   return (
-    <div className="editor-toolbar" role="toolbar" id="toolbar">
+    <div  className="editor-toolbar" role="toolbar" id="toolbar">
+          <HistoryActions/>
           {quillToolbarButtons.map((item, index) => {
             if (item.type === "divider") {
               return <div key={index} className="toolbar-divider" />;
@@ -145,6 +150,7 @@ export default function QuillToolbar() {
                </button>
             );
           })}
+          <ExportActions/>
         </div>
   )
 }
