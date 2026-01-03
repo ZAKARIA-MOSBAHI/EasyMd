@@ -44,28 +44,7 @@ export default function EditorWorkspace() {
         containerRef.current!.style.height = `calc(100% - ${toolbarHeight}px)`;
       }
     },[])
-    useEffect(() => {
-  console.log("=== DEBUG INFO ===");
-  console.log("ReactQuill exists?", !!ReactQuill);
-  console.log("ReactQuill.Quill exists?", ReactQuill?.Quill);
-  console.log("ReactQuill.Quill.imports:", ReactQuill?.Quill?.imports);
-  
-  if (ReactQuill?.Quill?.imports) {
-    console.log("Keys in imports:", Object.keys(ReactQuill.Quill.imports));
-    console.log("Formats available:");
-    
-    // Try to import common formats
-    const formatsToTest = ["bold", "italic", "list", "header"];
-    formatsToTest.forEach(formatName => {
-      try {
-        const format = ReactQuill.Quill.import(`formats/${formatName}`);
-        console.log(`✓ formats/${formatName}:`, !!format);
-      } catch (e) {
-        console.log(`✗ formats/${formatName}: Not found`);
-      }
-    });
-  }
-}, []);
+     
      return(
       <div className="editor_container">
       <QuillToolbar/>
@@ -81,13 +60,13 @@ export default function EditorWorkspace() {
       <ReactQuill
          value={value}
         onChange={setValue}
-        placeholder="Write Contents Here..."
-        modules={modules}
+         modules={modules}
         formats={formats}
+
       />
     </div>
         <Divider ref={dividerRef} onResize={startDragging} />
-        <Preview />
+        <Preview value={value} />
       </div>
       </div>
     )

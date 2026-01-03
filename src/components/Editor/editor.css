@@ -13,8 +13,9 @@
 .quill {
   height: 100%;
 }
-.ql-editor {
+.ql-editor , .markdown_preview{
   overflow-y: scroll;
+  overflow-x: hidden;
   font-size: 14px !important;
 }
 .ql-editor.ql-blank::before {

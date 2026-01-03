@@ -1,8 +1,11 @@
+import hljs from "highlight.js";
 import { handlers } from "./quill.handlers";
 
+
 export const modules = {
- toolbar: {
+  syntax: {hljs},
+  toolbar: {
     container: "#toolbar",
-    handlers : handlers
+    handlers: handlers
   },
 };
