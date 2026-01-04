@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 export function useResize(initial = 50, min = 30, max = 70) {
   const [leftWidth, setLeftWidth] = useState(initial);
-
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isDragging = useRef(false);
 

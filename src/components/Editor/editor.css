@@ -38,6 +38,15 @@
   width: 1px ;
   background-color: #555 !important
 }
-.editor-toolbar button:hover > svg {
-  stroke:  #06c;
+/*my custom toolbar buttons */
+button[title="Paragraph"] {
+   color: #444;
+   font-size: 1rem;
+  font-weight: bold;
+ } 
+button[title="Paragraph"]:hover {
+color : #06c;
+}
+.toolbar-btn:hover {
+  stroke : #06c;
 }

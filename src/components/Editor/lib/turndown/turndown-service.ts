@@ -8,17 +8,17 @@ export const createMarkdownService = () => {
   const service = new TurndownService({
     codeBlockStyle: 'fenced',
     headingStyle: 'atx',
-    emDelimiter: '_',
+    emDelimiter: '*',
     strongDelimiter: '**',
     bulletListMarker: '-',
     hr: '---',
     linkStyle: 'inlined',
   });
   
-  // Add GFM plugin
+  //GFM plugin
   service.use(gfm);
   
-  // Add custom rules
+  //custom rules
   checkboxItem(service);
   codeBlock(service);
   
