@@ -1,17 +1,23 @@
 import { RotateCcw, RotateCw, X, type LucideIcon } from "lucide-react";
 import { useApp } from "../../../context/AppContext";
+import { type RefObject } from "react";
+import type ReactQuill from "react-quill-new";
 
-export default function HistoryActions() {
+export default function HistoryActions({
+  quillInstance,
+}: {
+  quillInstance: RefObject<ReactQuill | null>;
+}) {
   const { clearContent } = useApp();
   const actions: { label: string; action: () => void; icon: LucideIcon }[] = [
     {
       label: "Undo",
-      action: () => {},
+      action: () => quillInstance.current?.editor?.history.undo(),
       icon: RotateCcw,
     },
     {
       label: "Redo",
-      action: () => {},
+      action: () => quillInstance.current?.editor?.history.redo(),
       icon: RotateCw,
     },
     {
@@ -20,6 +26,7 @@ export default function HistoryActions() {
       icon: X,
     },
   ];
+
   return (
     <>
       {actions.map((action, index) => (

@@ -6,8 +6,7 @@ export const useMarkdown = () => {
   const { html } = useApp();
   
   const markdown = useMemo(() => {
-    console.log('🔄 Converting HTML to markdown...');
-    return markdownService.turndown(html);
+     return markdownService.turndown(html);
   }, [html]);  
 
    const copyMarkdown = useCallback(() => {

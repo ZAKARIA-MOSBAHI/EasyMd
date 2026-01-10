@@ -1,5 +1,7 @@
+import type { RefObject } from "react";
 import ExportActions from "./ExportActions";
 import HistoryActions from "./HistoryActions";
+import type ReactQuill from "react-quill-new";
 
 type quillToolbarBtn =
   | {
@@ -127,10 +129,14 @@ const quillToolbarButtons: quillToolbarBtn[] = [
     label: "Horizontal line",
    },*/
 ];
-export default function QuillToolbar() {
+export default function QuillToolbar({
+  quillInstance,
+}: {
+  quillInstance: RefObject<ReactQuill | null>;
+}) {
   return (
     <div className="editor-toolbar" role="toolbar" id="toolbar">
-      <HistoryActions />
+      <HistoryActions quillInstance={quillInstance} />
       {quillToolbarButtons.map((item, index) => {
         if (item.type === "divider") {
           return <div key={index} className="toolbar-divider" />;

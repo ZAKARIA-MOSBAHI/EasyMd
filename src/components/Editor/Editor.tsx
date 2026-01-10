@@ -13,7 +13,7 @@ import { useApp } from "../../context/AppContext";
 export default function EditorWorkspace() {
   const { html, setHtml } = useApp();
   const dividerRef = useRef<HTMLDivElement | null>(null);
-  //const QuillInstanceRef = useRef<ReactQuill | null>(null);
+  const QuillInstanceRef = useRef<ReactQuill | null>(null);
   const { containerRef, leftWidth, startDragging } = useResize();
   const dividerWidth = 6;
   const gridTemplateColumns = `
@@ -34,7 +34,7 @@ export default function EditorWorkspace() {
 
   return (
     <div className="editor_container">
-      <QuillToolbar />
+      <QuillToolbar quillInstance={QuillInstanceRef} />
       <div
         ref={containerRef}
         className="app_container"
@@ -44,7 +44,7 @@ export default function EditorWorkspace() {
       >
         <div className="editor">
           <ReactQuill
-            // ref={QuillInstanceRef}
+            ref={QuillInstanceRef}
             value={html}
             onChange={(value) => setHtml(value)}
             modules={modules}
