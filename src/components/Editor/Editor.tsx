@@ -42,7 +42,7 @@ export default function EditorWorkspace() {
           gridTemplateColumns,
         }}
       >
-        <div className="editor">
+        <div className="editor" spellCheck={false}>
           <ReactQuill
             ref={QuillInstanceRef}
             value={html}

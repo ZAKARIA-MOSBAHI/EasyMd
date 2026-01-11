@@ -7,8 +7,7 @@ export const modules = {
     history: {
       delay: 2000,
       maxStack: 500,
-      userOnly: true
-    },
+     },
   toolbar: {
     container: "#toolbar",
     handlers: handlers

@@ -1,0 +1,96 @@
+/*styles that override quill default styles*/
+.ql-editor > h1:first-child, 
+.ql-editor > h2:first-child,
+.ql-editor > h3:first-child,
+.ql-editor > h4:first-child ,
+.ql-editor > h5:first-child{
+  margin-top: 0 !important;
+}
+.ql-editor > h1 {
+    font-size: 32px !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+ }
+.ql-editor > h2 {
+    font-size: 24px !important;
+     margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+.ql-editor > h3 {
+    font-size: 20px !important;
+}
+.ql-editor > h4 {
+    font-size: 16px !important;
+}
+.ql-editor > h5 {
+    font-size: 14px !important;
+}
+.ql-editor > h6 {
+    font-size: 13px !important;
+}
+.ql-editor > p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+ }
+.ql-editor > code {
+    color : rgb(193, 121, 139) !important; 
+    background-color: #6f223880 !important;
+}
+
+.ql-editor > blockquote {
+        background: #2c2d31 !important;
+    
+    border-radius: 4px !important;
+    padding: 16px 10px !important;
+    border-left: 4px solid #ce6546 !important;
+}
+/* code block */
+.ql-editor > .ql-code-block-container {
+        background: #2c2d31 !important;
+        padding: 1.5rem 1.25rem !important;
+
+}
+.ql-editor > .ql-code-block-container > div {
+        margin-block: 5px !important;
+
+}
+/* bullet and numbered lists */
+.ql-editor li[data-list=bullet] > .ql-ui:before {
+     color:#ce6546 !important ; /* bullet color */
+}
+/*bullet & numbers positioning*/
+.ql-editor li > .ql-ui:before , 
+.ql-editor li > .ql-ui::after
+{
+    margin-left: -2em !important ; 
+}
+.ql-editor li {
+     margin-block: 10px !important;
+}
+
+/*checkbox*/
+.ql-editor li[data-list=unchecked] > .ql-ui::before,
+.ql-editor li[data-list=checked] > .ql-ui::before  {
+    content: '' !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px ;
+    border-radius: 4px;
+    border: 1px solid #ce6546;
+}
+.ql-editor li[data-list=checked] > .ql-ui::after {
+   content: "" !important;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+     display: inline-block;
+    background-color: #ce6546;
+    width: 13px;
+    height: 13px;
+    margin-right: .3em;
+    border-radius: 4px;
+    text-align: right;
+    white-space: nowrap;
+}

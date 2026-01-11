@@ -14,7 +14,7 @@ function checkboxItem(turndownService : TurndownService) {
 
       // Check if this LI contains a checkbox (quill checkbox structure)
       const isChecked = node.getAttribute('data-list') === 'checked';
-      return (isChecked ? '- [x] ' : '- [ ] ') + content;
+      return (isChecked ? '\n- [x] ' : '- [ ] ') + content;
     }
   });
 }
