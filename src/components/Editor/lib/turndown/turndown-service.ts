@@ -1,4 +1,3 @@
-// turndown.service.ts - Separate service file
 import TurndownService from 'turndown';
 import { gfm } from 'turndown-plugin-gfm';
 import { checkboxItem, codeBlock } from './custom-rules';

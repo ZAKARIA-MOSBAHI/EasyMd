@@ -9,8 +9,8 @@ import { formats } from "./lib/quill/quill.formats";
 import Divider from "../Divider";
 import Preview from "../Preview";
 import { useApp } from "../../context/AppContext";
-
-export default function EditorWorkspace() {
+ 
+export default function Editor() {
   const { html, setHtml } = useApp();
   const dividerRef = useRef<HTMLDivElement | null>(null);
   const QuillInstanceRef = useRef<ReactQuill | null>(null);
@@ -22,15 +22,25 @@ export default function EditorWorkspace() {
    calc(${100 - leftWidth}% - ${dividerWidth / 2}px)
    `;
 
-  useEffect(() => {
-    const toolbarHeight =
-      document.querySelector(".editor-toolbar")?.clientHeight;
+useEffect(() => {
+  const updateHeight = () => {
 
-    console.log(toolbarHeight);
-    if (toolbarHeight) {
-      containerRef.current!.style.height = `calc(100% - ${toolbarHeight}px)`;
+    const toolbar = document.querySelector(".editor-toolbar");
+    const toolbarHeight = toolbar?.clientHeight;
+     if (toolbarHeight && containerRef.current) {
+      containerRef.current.style.height = `calc(100% - ${toolbarHeight}px)`;
     }
-  }, []);
+  };
+
+   updateHeight();
+
+   window.addEventListener("resize", updateHeight);
+
+   return () => {
+    window.removeEventListener("resize", updateHeight);
+  };
+}, []);
+
 
   return (
     <div className="editor_container">
